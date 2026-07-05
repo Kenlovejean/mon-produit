@@ -1,37 +1,199 @@
-update index.html
-:wq
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="fr">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ken Love Jean Jules | WDD 130</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Mon Produit — vente directe</title>
+    <!-- Google Fonts pour une typographie soignée -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #faf9f8;
+            color: #1e1e1e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* ----- IMAGE PRODUIT ----- */
+        .product-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #f0eeeb; /* couleur de fond si l'image manque */
+        }
+        /* Si tu veux que l'image remplisse un cadre défini, décommente :
+        .product-image {
+            height: 400px;
+            object-fit: cover;
+        } */
+
+        /* ----- CONTENU ----- */
+        .content {
+            padding: 40px 35px 45px;
+        }
+        .badge {
+            display: inline-block;
+            background: #eef6ff;
+            color: #1a5cff;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 6px 16px;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .price {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1a5cff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #6b6b6b;
+            text-decoration: line-through;
+            margin-left: 6px;
+        }
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #3a3a3a;
+            margin-bottom: 30px;
+        }
+        .description strong {
+            color: #1e1e1e;
+        }
+
+        /* ----- BOUTON WHATSAPP ----- */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #25d366;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 18px 36px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        .whatsapp-btn:hover {
+            background: #1ebe5e;
+            transform: scale(1.01);
+        }
+        .whatsapp-btn:active {
+            transform: scale(0.97);
+        }
+        .whatsapp-btn img {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1); /* icône blanche */
+        }
+        /* petite note sous le bouton */
+        .footnote {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        .footnote a {
+            color: #1a5cff;
+            text-decoration: none;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 600px) {
+            .content {
+                padding: 25px 20px 30px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .price {
+                font-size: 1.6rem;
+            }
+            .whatsapp-btn {
+                font-size: 1rem;
+                padding: 16px 20px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <header>
-        <nav>
-            <a href="#">Home</a>
-            <a href="wwr/">Rafting Website</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Ken Love Jean Jules | WDD 130</h1>
-        <img src="images/ISAO3478.JPG" alt="Ken Love Jean Jules profile picture" width="200">
+    <div class="card">
+        <!-- IMAGE : remplace le src par le chemin de ta photo -->
+        <img class="product-image" src="mon-image.jpg" alt="Photo du produit">
 
-        <p>Hello! My name is Ken Love Jean Jules, and I am from Carrefour, Haiti.
-            I really love my country and nature, and I enjoy being outdoors.
-            I am passionate about technology and learning new things.
-            That is why I am creating my own website—to share more about the culture of my
-            country.
-        </p>
-    </main>
+        <div class="content">
+            <span class="badge">⭐ Nouveauté</span>
+            <h1>Nom de ton produit</h1>
+            <div class="price">
+                $ 49,90 MX
+                <small> $ 69,90 MX</small>
+            </div>
+            <p class="description">
+                <strong>Description courte et percutante</strong> — mets en avant les bénéfices,
+                les caractéristiques et ce qui rend ton produit unique. N'hésite pas à ajouter
+                une touche d'émotion pour donner envie.
+            </p>
 
-    <footer>
-        <p>&copy; 🌴 Ken Love Jean Jules 🌴 Carrefour, Haiti</p>
-    </footer>
+            <!-- BOUTON WHATSAPP -->
+            <a href="+52 9181066169" 
+               class="whatsapp-btn" 
+               target="_blank">
+                <!-- Icône WhatsApp (SVG inline) -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="28" height="28" fill="white">
+                    <path d="M24 4C13.5 4 4 13.5 4 24c0 3.8 1.1 7.3 3 10.3L4 44l10-3c3 1.9 6.5 3 10.3 3C34.5 44 44 34.5 44 24S34.5 4 24 4zM18.8 15.5c.4 0 .8.1 1.2.4.4.3.9 1 .9 1.6 0 .6-.3 1.2-.7 1.7-.4.4-.7.7-.8 1.1-.1.4.1.9.5 1.4l.1.1c1 1.7 2.6 3.2 4.3 4.2.6.4 1.1.6 1.5.6.4 0 .8-.1 1.1-.5.3-.3.6-.8.9-1.2.3-.4.7-.4 1.1-.2l.1.1c.5.3 1.4.7 1.7.9.3.2.5.5.5.8 0 .3-.1.7-.4 1.1-.3.4-.8.8-1.3 1.1-.5.3-1.2.5-1.9.5-1.3 0-2.7-.6-4.1-1.5-2.6-1.7-4.7-4.2-5.7-6.4-.4-.9-.6-1.7-.6-2.4 0-.6.2-1.2.6-1.6.4-.4.8-.6 1.3-.6h.2c.4 0 .8.1 1.1.4.3.3.7.9.7 1.5 0 .6-.3 1.1-.6 1.5-.3.4-.6.7-.6 1.1 0 .4.1.7.3 1 .2.3.5.6.8.9.3.3.6.6.9.9.3.3.7.5 1.1.5.4 0 .8-.1 1.2-.4.4-.3.8-.7 1.1-1.2.3-.5.7-.8 1.2-.8.5 0 .9.2 1.3.5.4.3.9.6 1.2.9.3.3.5.6.5.9 0 .3-.1.7-.4 1.1-.3.4-.7.8-1.2 1.1-.5.3-1.2.5-1.9.5-1.4 0-3-.6-4.5-1.6-2.8-1.9-5.1-4.8-6.1-7.4-.5-1.4-.8-2.7-.8-3.8 0-1.3.3-2.3.8-3.1.5-.8 1.2-1.2 1.9-1.2.4 0 .8 0 1.1.3.3.3.7.7 1 .7z"/>
+                </svg>
+                Acheter via WhatsApp
+            </a>
+
+            <div class="footnote">
+                💬 Cliquez pour être redirigé vers WhatsApp · Réponse rapide garantie
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>
